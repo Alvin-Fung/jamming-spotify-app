@@ -1,12 +1,15 @@
 import './App.css';
-import searchBar from './components/SearchBar/searchBar';
-import searchResults from './components/SearchResults/searchResults';
+import SearchBar from './components/SearchBar/searchBar';
+import SearchResults from './components/SearchResults/searchResults';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+        <h1>Jamming</h1>
+        <SearchBar />
+        <SearchResults />
       </header>
     </div>
   );
