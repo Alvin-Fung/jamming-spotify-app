@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
-class TrackList extends Component {
+class Track extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-
+        return (
+            <div>
+                {/*UI goes here*/}
+            </div>
+        );
     }
 }
 
