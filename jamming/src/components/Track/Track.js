@@ -10,7 +10,7 @@ class Track extends Component {
         return (
             <div>
                 <div>
-                    const trackArray = ['ID', 'name', 'artist', 'album'];
+                    {/* const trackArray = ['ID', 'name', 'artist', 'album']; */}
                 </div>
             </div>
         );
