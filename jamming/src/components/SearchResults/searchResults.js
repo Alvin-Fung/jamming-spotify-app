@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TrackList from './components/TrackList/TrackList';
+import Tracklist from './components/Tracklist/Tracklist';
 
 class SearchResults extends Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class SearchResults extends Component {
         return (
             <div>
                 <h2>Results</h2>
-                <TrackList />
+                <Tracklist />
             </div>
         )
     }

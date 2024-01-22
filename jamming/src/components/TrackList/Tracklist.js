@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Track from './components/Track/Track';
 
-class TrackList extends Component {
+class Tracklist extends Component {
     constructor(props) {
         super(props);
     }
@@ -17,4 +17,4 @@ class TrackList extends Component {
     }
 }
 
-export default TrackList; 
+export default Tracklist; 

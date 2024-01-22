@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TrackList from './components/TrackList/TrackList';
+import Tracklist from './components/Tracklist/Tracklist';
 
 class Playlist extends Component {
     constructor(props) {
@@ -10,9 +10,9 @@ class Playlist extends Component {
         return (
             <div>
                 <h2>My Playist</h2>
-                <TrackList />
+                <Tracklist />
             </div>
-        )
+        );
     }
 }
 
