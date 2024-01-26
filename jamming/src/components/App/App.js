@@ -4,6 +4,7 @@ import './App.css';
 import SearchBar from '../SearchBar/searchBar';
 import SearchResults from '../SearchResults/searchResults';
 import Playlist from '../Playlist/Playlist';
+import Track from '../Track/Track';
 
 function App() {
 
@@ -20,7 +21,10 @@ function App() {
       <header className="App-header">
         <h1>Jamming</h1>
         <SearchBar />
-        <SearchResults searchResults={searchResults} />
+        <SearchResults
+          searchResults={searchResults.map(track =>
+            (<Track key={track.id} track={track} />))
+          } />
         <Playlist />
       </header>
     </div>
