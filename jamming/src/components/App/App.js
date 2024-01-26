@@ -13,6 +13,8 @@ function App() {
     { id: '2', name: 'Song 2', artist: 'Artist 2', album: 'Album 2' }
   ];
 
+  const [searchResults, setSearchResults] = useState(hardCodedTracks);
+
   return (
     <div className="App">
       <header className="App-header">
