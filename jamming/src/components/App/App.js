@@ -1,6 +1,6 @@
-import './App/App.css';
+import './App.css';
 import SearchBar from '../SearchBar/searchBar';
-import SearchResults from './SearchResults/SearchResults';
+import SearchResults from '../SearchResults/searchResults';
 import Playlist from '../Playlist/Playlist';
 
 function App() {
