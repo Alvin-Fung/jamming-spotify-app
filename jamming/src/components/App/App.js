@@ -21,10 +21,7 @@ function App() {
       <header className="App-header">
         <h1>Jamming</h1>
         <SearchBar />
-        <SearchResults
-          searchResults={searchResults.map(track =>
-            (<Track key={track.id} track={track} />))
-          } />
+        <SearchResults searchResults={searchResults} />
         <Playlist />
       </header>
     </div>

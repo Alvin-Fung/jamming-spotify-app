@@ -7,11 +7,14 @@ class Track extends Component {
     }
 
     render() {
+        const { track } = this.props;
+
         return (
             <div>
-                <div>
-                    {/* const trackArray = ['ID', 'name', 'artist', 'album']; */}
-                </div>
+                <p>ID: {track.id}</p>
+                <p>Name: {track.name}</p>
+                <p>Artist: {track.artist}</p>
+                <p>Album: {track.album}</p>
             </div>
         );
     }

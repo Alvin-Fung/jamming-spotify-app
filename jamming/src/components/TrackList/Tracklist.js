@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import Track from '../Track/Track';
 
 class TrackList extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        const { searchResults } = this.props;
+
         return (
             <div>
-                {/* Map through tracks and render Track components here*/}
-                <Track />
-                {/* Repeat here for each track*/}
+                {searchResults.map(track => (
+                    <Track key={track.id} track={track} />
+                ))}
             </div>
         )
     }
