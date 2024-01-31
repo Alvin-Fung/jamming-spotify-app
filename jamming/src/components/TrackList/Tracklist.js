@@ -5,6 +5,8 @@ class TrackList extends Component {
     render() {
         const { searchResults } = this.props;
 
+        console.log('searchResults: ', searchResults);
+
         return (
             <div>
                 {searchResults.map(track => (

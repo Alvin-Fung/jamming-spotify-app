@@ -7,10 +7,11 @@ class Playlist extends Component {
     }
 
     render() {
+        const { searchResults } = this.props;
         return (
             <div>
                 <h2>My Playist</h2>
-                <Tracklist />
+                <Tracklist searchResults={searchResults} />
             </div>
         );
     }
