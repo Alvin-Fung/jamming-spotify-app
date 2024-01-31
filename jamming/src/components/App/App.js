@@ -4,7 +4,6 @@ import './App.css';
 import SearchBar from '../SearchBar/searchBar';
 import SearchResults from '../SearchResults/searchResults';
 import Playlist from '../Playlist/Playlist';
-import Track from '../Track/Track';
 
 function App() {
 
@@ -22,7 +21,7 @@ function App() {
         <h1>Jamming</h1>
         <SearchBar />
         <SearchResults searchResults={searchResults} />
-        <Playlist />
+        <Playlist searchResults={searchResults} />
       </header>
     </div>
   );
