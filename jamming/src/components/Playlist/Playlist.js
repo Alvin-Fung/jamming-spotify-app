@@ -11,10 +11,11 @@ class Playlist extends Component {
     }
 
     render() {
+
         return (
             <div>
-                <h2>{this.state.playlistName}</h2>
-                <Tracklist searchResults={this.state.playlistTracks} />
+                <h2>{this.props.playlistName}</h2>
+                <Tracklist searchResults={this.props.playlistTracks} />
             </div>
         );
     }

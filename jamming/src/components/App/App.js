@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 
 import './App.css';
 import SearchBar from '../SearchBar/searchBar';
@@ -15,11 +15,17 @@ class App extends Component {
         { id: '2', name: `I'm Not In Love`, artist: '10cc', album: 'The Original Soundtrack' }
       ],
       playlistName: "My Playlist",
-      playlistTracks: [],
+      playlistTracks: [
+        { id: '1', name: 'Shine On You Crazy Diamond, Pts. 1-5 ', artist: 'Pink Floyd', album: 'Wish You Were Here' },
+        { id: '2', name: `I'm Not In Love`, artist: '10cc', album: 'The Original Soundtrack' }
+      ]
     };
   }
 
   render() {
+    console.log('playlistName:', this.state.playlistName);
+    console.log('playlistTracks:', this.state.playlistTracks);
+    console.log('searchResults:', this.state.searchResults);
     return (
       <div className="App" >
         <header className="App-header">
