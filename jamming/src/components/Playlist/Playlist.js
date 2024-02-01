@@ -7,8 +7,18 @@ class Playlist extends Component {
         this.state = {
             playlistName: "My Playlist",
             playlistTracks: [
-                { id: '1', name: 'Shine On You Crazy Diamond, Pts. 5-6 ', artist: 'Pink Floyd', album: 'Wish You Were Here' },
-                { id: '2', name: 'Dance The Night Away', artist: 'Cream', album: 'Disraeli Gears' }
+                {
+                    id: '1',
+                    name: 'Shine On You Crazy Diamond, Pts. 5-6 ',
+                    artist: 'Pink Floyd',
+                    album: 'Wish You Were Here'
+                },
+                {
+                    id: '2',
+                    name: 'Dance The Night Away',
+                    artist: 'Cream',
+                    album: 'Disraeli Gears'
+                }
             ]
         }
     }
