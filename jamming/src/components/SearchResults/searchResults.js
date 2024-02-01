@@ -4,7 +4,6 @@ import TrackList from '../TrackList/Tracklist';
 class SearchResults extends Component {
     constructor(props) {
         super(props);
-        //State and methods go here. Grab the mock data we have in App.js and move it here.
         this.state = {
             //Step 1: Create hardcoded array of track objects
             searchResults: [
@@ -14,11 +13,11 @@ class SearchResults extends Component {
         };
     }
     render() {
-        console.log('Search Results - searchResults:', this.props.searchResults);
+        console.log('Search Results - searchResults:', this.state.searchResults);
         return (
             <div>
                 <h2>Results</h2>
-                <TrackList searchResults={this.props.searchResults} />
+                <TrackList searchResults={this.state.searchResults} />
             </div>
         )
     }
