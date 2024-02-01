@@ -8,8 +8,9 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div>
-                {/*UI goes here*/}
+            <div className>
+                <input placeholder="Enter A Song, Album or Artist" />
+                <button className="searchButton">Search</button>
             </div>
         )
 
