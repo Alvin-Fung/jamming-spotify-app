@@ -17,6 +17,7 @@ class SearchResults extends Component {
         return (
             <div>
                 <h2>Results</h2>
+                <button>+</button>
                 <TrackList searchResults={this.state.searchResults} />
             </div>
         )
