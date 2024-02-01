@@ -4,13 +4,17 @@ import Tracklist from '../TrackList/Tracklist';
 class Playlist extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            playlistName: "My Playlist",
+            playlistTracks: []
+        }
     }
 
     render() {
         return (
             <div>
-                <h2>My Playist</h2>
-                <Tracklist searchResults={this.props.searchResults} />
+                <h2>{this.state.playlistName}</h2>
+                <Tracklist searchResults={this.state.playlistTracks} />
             </div>
         );
     }
