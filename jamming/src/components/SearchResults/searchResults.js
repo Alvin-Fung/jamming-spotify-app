@@ -23,7 +23,7 @@ class SearchResults extends Component {
         };
     }
     render() {
-        console.log('Search Results - searchResults:', this.state.searchResults);
+        // console.log('Search Results - searchResults:', this.state.searchResults);
         return (
             <div className="Search-Results">
                 <h2>Results</h2>

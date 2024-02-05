@@ -17,9 +17,9 @@ class App extends Component {
   }
 
   render() {
-    console.log('playlistName:', this.props.playlistName);
-    console.log('playlistTracks:', this.props.playlistTracks);
-    console.log('searchResults:', this.props.searchResults);
+    // console.log('playlistName:', this.props.playlistName);
+    // console.log('playlistTracks:', this.props.playlistTracks);
+    // console.log('searchResults:', this.props.searchResults);
     return (
       <div className="App" >
         <header className="App-header">

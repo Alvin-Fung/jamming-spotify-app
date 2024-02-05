@@ -40,11 +40,14 @@ class Playlist extends Component {
         }
 
         //Test One - To see if a track is not in the playlist:
-        console.log(playlistInstance.containsTrack(newTrack, playlistInstance.state.playlistTracks));
+        console.log(playlistInstance.containsTrack(newTrack, playlistInstance.state.playlistTracks)); //Return False
 
         //Test Two - To see if a track is in the playlist:
+        const existingTrack = playlistInstance.state.playlistTracks[0];
+        console.log(playlistInstance.containsTrack(existingTrack, playlistInstance.state.playlistTracks)); //Return True
     }
 
+    runPlaylistTracks();
 
 
     render() {
