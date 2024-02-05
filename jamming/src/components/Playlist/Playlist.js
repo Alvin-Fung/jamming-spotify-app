@@ -20,13 +20,28 @@ class Playlist extends Component {
                     album: 'Disraeli Gears'
                 }
             ]
+        };
+    }
+    //Test setup
+    runPlaylistTracks() {
+        //Instance
+        const playlistInstance = new Playlist();
+        //Sample track and playlist tracks
+        const newTrack = {
+            id: '3',
+            name: 'Another Track',
+            artist: 'Another Artist',
+            album: 'Another Album'
         }
+    }
+
+    containsTrack = (track) => {
+        return this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id);
     }
 
     render() {
         return (
             <div className="Playlist">
-
                 <h2>{this.state.playlistName}</h2>
                 <Tracklist searchResults={this.state.playlistTracks} />
                 <button className="Playlist-save">Save to Spotify</button>
