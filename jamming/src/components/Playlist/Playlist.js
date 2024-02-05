@@ -23,6 +23,11 @@ class Playlist extends Component {
         };
     }
     //Test setup
+
+    containsTrack = (track) => {
+        return this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id);
+    }
+
     runPlaylistTracks() {
         //Instance
         const playlistInstance = new Playlist();
@@ -33,11 +38,14 @@ class Playlist extends Component {
             artist: 'Another Artist',
             album: 'Another Album'
         }
+
+        //Test One - To see if a track is not in the playlist:
+        console.log(playlistInstance.containsTrack(newTrack, playlistInstance.state.playlistTracks));
+
+        //Test Two - To see if a track is in the playlist:
     }
 
-    containsTrack = (track) => {
-        return this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id);
-    }
+
 
     render() {
         return (
