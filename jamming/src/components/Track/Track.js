@@ -10,7 +10,7 @@ class Track extends Component {
         const { track } = this.props;
 
         return (
-            <div>
+            <div className="Track">
                 <p>ID: {track.id}</p>
                 <p>Name: {track.name}</p>
                 <p>Artist: {track.artist}</p>

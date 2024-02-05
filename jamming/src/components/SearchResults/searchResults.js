@@ -25,10 +25,10 @@ class SearchResults extends Component {
     render() {
         console.log('Search Results - searchResults:', this.state.searchResults);
         return (
-            <div>
+            <div className="Search-Results">
                 <h2>Results</h2>
-                <button>+</button>
                 <TrackList searchResults={this.state.searchResults} />
+                <button>Save to Spotify</button>
             </div>
         )
     }

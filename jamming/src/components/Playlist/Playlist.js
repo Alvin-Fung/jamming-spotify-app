@@ -25,9 +25,11 @@ class Playlist extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Playlist">
+
                 <h2>{this.state.playlistName}</h2>
                 <Tracklist searchResults={this.state.playlistTracks} />
+                <button className="Playlist-save">Save to Spotify</button>
             </div>
         );
     }
