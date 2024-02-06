@@ -11,10 +11,12 @@ class Track extends Component {
 
         return (
             <div className="Track">
-                <p>ID: {track.id}</p>
-                <p>Name: {track.name}</p>
-                <p>Artist: {track.artist}</p>
-                <p>Album: {track.album}</p>
+                <div className="Track-information">
+                    {/* <p>ID: {track.id}</p> */}
+                    <p>Name: {track.name}</p>
+                    <p>Artist: {track.artist}</p> | <p>Album: {track.album}</p>
+                </div>
+                <button className="Track-action">+</button>
             </div>
         );
     }
