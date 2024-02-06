@@ -21,11 +21,13 @@ class SearchResults extends Component {
                 }
             ]
         };
+        this.addTrackToPlaylist = this.addTrackToPlaylist.bind(this);
     }
+
 
     addTrackToPlaylist = (track) => {
         //Call function from parent component
-        this.props.onAdd(track);
+        this.props.onAddTrack(track);
     }
 
 
@@ -35,7 +37,7 @@ class SearchResults extends Component {
             <div className="Search-Results">
                 <h2>Results</h2>
                 <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
-                <button>Save to Spotify</button>
+                <button onClick={() => this.addTrackToPlaylist(this.state.searchResults[0])}>Save to Spotify</button>
             </div>
         )
     }
