@@ -16,7 +16,7 @@ class Track extends Component {
                     <p>Name: {track.name}</p>
                     <p>Artist: {track.artist}</p> | <p>Album: {track.album}</p>
                 </div>
-                <button className="Track-action">+</button>
+                <button className="Track-action" onClick={() => this.props.onAdd(this.props.track)}>+</button>
             </div>
         );
     }

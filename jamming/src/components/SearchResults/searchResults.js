@@ -24,8 +24,8 @@ class SearchResults extends Component {
     }
 
     addTrackToPlaylist = (track) => {
-        //???
-        this.props.function(track); //Temporary placeholder
+        //Call function from parent component
+        this.props.onAdd(track);
     }
 
 
