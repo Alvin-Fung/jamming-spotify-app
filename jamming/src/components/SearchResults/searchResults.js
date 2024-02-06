@@ -22,12 +22,19 @@ class SearchResults extends Component {
             ]
         };
     }
+
+    addTrackToPlaylist = (track) => {
+        //???
+        this.props.function(track); //Temporary placeholder
+    }
+
+
     render() {
         // console.log('Search Results - searchResults:', this.state.searchResults);
         return (
             <div className="Search-Results">
                 <h2>Results</h2>
-                <TrackList searchResults={this.state.searchResults} />
+                <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
                 <button>Save to Spotify</button>
             </div>
         )
