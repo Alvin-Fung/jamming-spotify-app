@@ -10,7 +10,7 @@ class TrackList extends Component {
         return (
             <div className="TrackList">
                 {this.props.searchResults.map(track => (
-                    <Track key={track.id} track={track} onAdd={this.props.onAddTrack} />
+                    <Track key={track.id} track={track} onAdd={this.props.onAdd} />
                 ))}
             </div>
         )
