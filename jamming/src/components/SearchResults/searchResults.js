@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import TrackList from '../TrackList/Tracklist';
+import Playlist from '../Playlist/Playlist';
 
 class SearchResults extends Component {
     constructor(props) {
@@ -8,36 +9,49 @@ class SearchResults extends Component {
             //Step 1: Create hardcoded array of track objects
             searchResults: [
                 {
-                    id: '1',
-                    name: 'Shine On You Crazy Diamond, Pts. 1-5 ',
-                    artist: 'Pink Floyd',
-                    album: 'Wish You Were Here'
+                    id: '3',
+                    name: 'Plastic Love',
+                    artist: 'Mariya Takeuchi',
+                    album: 'Expressions'
                 },
                 {
-                    id: '2',
-                    name: `I'm Not In Love`,
-                    artist: '10cc',
-                    album: 'The Original Soundtrack'
+                    id: '4',
+                    name: `Epitaph`,
+                    artist: 'King Crimson',
+                    album: 'In The Court Of The Crimson King'
                 }
-            ]
+            ],
+            playlist: [],
+            message: '',
         };
-        this.addTrackToPlaylist = this.addTrackToPlaylist.bind(this);
     }
 
+    containsTrack = (track) => {
+        return this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id);
+    }
 
     addTrackToPlaylist = (track) => {
         //Call function from parent component
-        this.props.onAdd(track);
+        //Need some sort of conditional statement here to check if the track is already within the play list
+        const updatedPlaylist = [...this.state.playlist];
+
+        if (this.containsTrack(track, updatedPlaylist)) {
+            this.setState({ message: 'Song is already in the playlist!' });
+        } else {
+            updatedPlaylist.push(track);
+            this.setState({ playlist: updatedPlaylist, message: 'Song has been added to playlist!' });
+        }
+
     }
 
 
     render() {
-        // console.log('Search Results - searchResults:', this.state.searchResults);
+        console.log('Search Results - searchResults:', this.state.searchResults);
         return (
             <div className="Search-Results">
                 <h2>Results</h2>
                 <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
-                <button onClick={() => this.props.onAdd(this.state.searchResults[0])}>Save to Spotify</button>
+                <button onClick={() => this.addTrackToPlaylist(this.state.searchResults)}>Save to Spotify</button>
             </div>
         )
     }

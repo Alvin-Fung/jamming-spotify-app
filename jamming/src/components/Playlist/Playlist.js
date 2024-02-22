@@ -24,34 +24,35 @@ class Playlist extends Component {
     }
     //Test setup
 
-    containsTrack = (track) => {
-        return this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id);
+
+    addTrack = (track) => {
+        this.playlistTracks.push(track);
     }
 
-    runPlaylistTracks() {
-        //Instance
-        const playlistInstance = new Playlist();
-        //Sample track and playlist tracks
-        const newTrack = {
-            id: '3',
-            name: 'Another Track',
-            artist: 'Another Artist',
-            album: 'Another Album'
-        }
+    // runPlaylistTracks() {
+    //     //Instance
+    //     const playlistInstance = new Playlist();
+    //     //Sample track and playlist tracks
+    //     const newTrack = {
+    //         id: '3',
+    //         name: 'Another Track',
+    //         artist: 'Another Artist',
+    //         album: 'Another Album'
+    //     }
 
-        //Test One - To see if a track is not in the playlist:
-        console.log(playlistInstance.containsTrack(newTrack, playlistInstance.state.playlistTracks)); //Return False
-        console.log('Track added to your playlist!');
+    //     //Test One - To see if a track is not in the playlist:
+    //     console.log(playlistInstance.containsTrack(newTrack, playlistInstance.state.playlistTracks)); //Return False
+    //     console.log('Track added to your playlist!');
 
-        //Test Two - To see if a track is in the playlist:
-        const existingTrack = playlistInstance.state.playlistTracks[0];
-        console.log(playlistInstance.containsTrack(existingTrack, playlistInstance.state.playlistTracks)); //Return True
-        console.log('This track is already in your playlist.');
-    }
+    //     //Test Two - To see if a track is in the playlist:
+    //     const existingTrack = playlistInstance.state.playlistTracks[0];
+    //     console.log(playlistInstance.containsTrack(existingTrack, playlistInstance.state.playlistTracks)); //Return True
+    //     console.log('This track is already in your playlist.');
+    // }
 
-    componentDidMount() {
-        this.runPlaylistTracks();
-    }
+    // componentDidMount() {
+    //     this.runPlaylistTracks();
+    // }
 
     render() {
         return (
