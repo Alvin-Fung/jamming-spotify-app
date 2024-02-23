@@ -1,0 +1,9 @@
+.Search-Results {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-results-column {
+    flex: 1;
+    padding: 20px;
+}

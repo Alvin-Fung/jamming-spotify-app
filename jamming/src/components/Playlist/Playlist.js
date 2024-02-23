@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tracklist from '../TrackList/Tracklist';
+import './Playlist.css';
 
 class Playlist extends Component {
     constructor(props) {
@@ -22,21 +23,19 @@ class Playlist extends Component {
             ]
         };
     }
-    //Test setup
-
 
     addTrack = (track) => {
-        this.playlistTracks.push(track);
+        this.setState({ playlistTracks: [...this.state.playlistTracks, track] });
     }
-
-
 
     render() {
         return (
             <div className="Playlist">
-                <h2>{this.state.playlistName}</h2>
-                <Tracklist searchResults={this.state.playlistTracks} />
-                <button className="Playlist-save">Save to Spotify</button>
+                <div className='playlist-column'>
+                    <h2>{this.state.playlistName}</h2>
+                    <Tracklist searchResults={this.state.playlistTracks} />
+                    <button className="Playlist-save">Save to Spotify</button>
+                </div>
             </div>
         );
     }

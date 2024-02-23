@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import TrackList from '../TrackList/Tracklist';
 import Playlist from '../Playlist/Playlist';
+import './searchResults.css';
 
 class SearchResults extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class SearchResults extends Component {
     addTrackToPlaylist = (track) => {
         //Call function from parent component
         //Need some sort of conditional statement here to check if the track is already within the play list
-        const updatedPlaylist = Array.isArray(this.state.playlist) ? [...this.state.playlist] : [];
+        const updatedPlaylist = [...this.state.playlist];
 
         if (this.containsTrack(track, updatedPlaylist)) {
             this.setState({ message: 'Song is already in the playlist!' });
@@ -49,9 +50,11 @@ class SearchResults extends Component {
         console.log('Search Results - searchResults:', this.state.searchResults);
         return (
             <div className="Search-Results">
-                <h2>Results</h2>
-                <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
-                <button onClick={() => this.addTrackToPlaylist(this.state.searchResults)}>Save to Spotify</button>
+                <div className='search-results-column'>
+                    <h2>Results</h2>
+                    <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
+                    <button onClick={() => this.addTrackToPlaylist(this.state.searchResults)}>Save to Spotify</button>
+                </div>
             </div>
         )
     }

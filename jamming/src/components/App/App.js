@@ -25,7 +25,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Jamming</h1>
           <SearchBar />
-          <SearchResults searchResults={this.props.searchResults} />
+          <SearchResults searchResults={this.state.searchResults} />
           <Playlist
             playlistName={this.props.playlistName}
             playlistTracks={this.props.playlistTracks}
