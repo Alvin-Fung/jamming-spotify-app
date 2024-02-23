@@ -42,7 +42,6 @@ class SearchResults extends Component {
             this.setState({ playlist: updatedPlaylist, message: 'Song has been added to playlist!' });
             console.log('Updated Plalist:', updatedPlaylist);
         }
-
     }
 
 
