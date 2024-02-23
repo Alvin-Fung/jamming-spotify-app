@@ -40,6 +40,7 @@ class SearchResults extends Component {
         } else {
             updatedPlaylist.push(track);
             this.setState({ playlist: updatedPlaylist, message: 'Song has been added to playlist!' });
+            console.log('Updated Plalist:', updatedPlaylist);
         }
 
     }
