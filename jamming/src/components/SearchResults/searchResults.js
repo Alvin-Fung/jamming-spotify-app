@@ -26,14 +26,14 @@ class SearchResults extends Component {
         };
     }
 
-    containsTrack = (track) => {
-        return this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id);
+    containsTrack = (track, playlist) => {
+        return playlist.some(existingTrack => existingTrack.id === track.id);
     }
 
     addTrackToPlaylist = (track) => {
         //Call function from parent component
         //Need some sort of conditional statement here to check if the track is already within the play list
-        const updatedPlaylist = [...this.state.playlist];
+        const updatedPlaylist = Array.isArray(this.state.playlist) ? [...this.state.playlist] : [];
 
         if (this.containsTrack(track, updatedPlaylist)) {
             this.setState({ message: 'Song is already in the playlist!' });
