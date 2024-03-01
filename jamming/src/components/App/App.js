@@ -13,7 +13,7 @@ class App extends Component {
       playlistName: "My Playlist",
       playlistTracks: []
     }
-
+    // this.addTrackPlaylist = this.addTrackToPlaylist.bind(this);
   }
 
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Jamming</h1>
           <SearchBar />
-          <SearchResults searchResults={this.state.searchResults} />
+          <SearchResults searchResults={this.state.searchResults} onAddTrack={this.addTrackPlaylist} />
           <Playlist
             playlistName={this.props.playlistName}
             playlistTracks={this.props.playlistTracks}

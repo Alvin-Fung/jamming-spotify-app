@@ -33,7 +33,7 @@ class Playlist extends Component {
             <div className="Playlist">
                 <div className='playlist-column'>
                     <h2>{this.state.playlistName}</h2>
-                    <Tracklist searchResults={this.state.playlistTracks} />
+                    <Tracklist searchResults={this.props.playlist} />
                     <button className="Playlist-save">Save to Spotify</button>
                 </div>
             </div>

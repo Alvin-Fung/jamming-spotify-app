@@ -33,7 +33,7 @@ class SearchResults extends Component {
 
     addTrackToPlaylist = (track) => {
         //Call function from parent component
-        //Need some sort of conditional statement here to check if the track is already within the play list
+        //Need some sort of conditional statement here to check if the track is already within the playlist
         const updatedPlaylist = [...this.state.playlist];
 
         if (this.containsTrack(track, updatedPlaylist)) {
@@ -55,6 +55,7 @@ class SearchResults extends Component {
                     <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
                     <button onClick={() => this.addTrackToPlaylist(this.state.searchResults)}>Save to Spotify</button>
                 </div>
+
             </div>
         )
     }
