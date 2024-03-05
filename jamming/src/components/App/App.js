@@ -13,23 +13,29 @@ class App extends Component {
       playlistName: "My Playlist",
       playlistTracks: []
     }
-    // this.addTrackPlaylist = this.addTrackToPlaylist.bind(this);
   }
 
+  updatePlaylist = (updatedPlaylist) => {
+    this.setState({ playlistTracks: updatedPlaylist });
+  }
+  //??
+
   render() {
-    // console.log('playlistName:', this.props.playlistName);
-    // console.log('playlistTracks:', this.props.playlistTracks);
-    // console.log('searchResults:', this.props.searchResults);
+    console.log('playlistName:', this.props.playlistName);
+    console.log('playlistTracks:', this.props.playlistTracks);
+    console.log('searchResults:', this.props.searchResults);
     return (
       <div className="App" >
         <header className="App-header">
           <h1>Jamming</h1>
           <SearchBar />
-          <SearchResults searchResults={this.state.searchResults} onAddTrack={this.addTrackPlaylist} />
+          <SearchResults
+            searchResults={this.state.searchResults}
+            onAddTrack={this.addTrackPlaylist} />
           <Playlist
             playlistName={this.props.playlistName}
             playlistTracks={this.props.playlistTracks}
-            searchResults={this.props.searchResults}
+          // searchResults={this.props.searchResults}
           />
         </header>
       </div>

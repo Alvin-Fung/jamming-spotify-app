@@ -5,11 +5,14 @@ class TrackList extends Component {
     render() {
         const { searchResults } = this.props;
 
-        // console.log('searchResults: ', searchResults);
+        console.log('searchResults: ', searchResults);
+        if (!searchResults || !Array.isArray(searchResults)) {
+            return <div>No results to display.</div>
+        }
 
         return (
             <div className="TrackList">
-                {this.props.searchResults.map(track => (
+                {searchResults.map(track => (
                     <Track key={track.id} track={track} onAdd={this.props.onAdd} />
                 ))}
             </div>
