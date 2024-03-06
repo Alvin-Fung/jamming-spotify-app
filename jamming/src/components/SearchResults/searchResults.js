@@ -17,13 +17,13 @@ class SearchResults extends Component {
         return playlist.some(existingTrack => existingTrack.id === track.id);
     }
 
-    addTrackPlaylist = (track) => {
-        const updatedPlaylist = [...this.state.playlistTracks];
+    addTrackToPlaylist = (track) => {
+        const updatedPlaylist = [...this.state.searchResults];
 
         if (!this.containsTrack(track, updatedPlaylist)) {
-            updatedPlaylist.push(track);
-            // this.setState({ playlistTracks: updatedPlaylist });
-            return track;
+            this.setState({ playlistTracks: updatedPlaylist });
+        } else {
+            this.state.message = 'Song is already in the playlist!';
         }
     }
 
@@ -34,7 +34,7 @@ class SearchResults extends Component {
                 <div className='search-results-column'>
                     <h2>Results</h2>
                     {/* Use this.props.onAddTrack instead of this.addTrackToPlaylist */}
-                    <TrackList searchResults={this.state.searchResults} onAdd={this.props.onAddTrack} />
+                    <TrackList searchResults={this.state.searchResults} onAdd={this.addTrackToPlaylist} />
                     <button onClick={() => this.props.onAddTrack(this.state.searchResults)}>Save to Spotify</button>
                 </div>
             </div>
