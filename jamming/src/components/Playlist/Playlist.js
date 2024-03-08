@@ -21,11 +21,12 @@ class Playlist extends Component {
     }
 
     render() {
+        console.log();
         return (
             <div className="Playlist">
                 <div className='playlist-column'>
                     <h2>{this.state.playlistName}</h2>
-                    <Tracklist searchResults={this.props.playlistTracks} />
+                    <Tracklist searchResults={this.state.playlistTracks} />
                     <button className="Playlist-save">Save to Spotify</button>
                 </div>
             </div>

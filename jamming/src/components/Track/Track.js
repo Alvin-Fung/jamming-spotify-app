@@ -18,7 +18,7 @@ class Track extends Component {
                         {track.artist} | {track.album}
                     </p>
                 </div>
-                <button className="Track-action" onClick={() => this.props.onAdd(this.props.track)}>+</button>
+                <button className="Track-action" onClick={() => this.props.onAddTrack(this.props.track)}>+</button>
             </div>
         );
     }

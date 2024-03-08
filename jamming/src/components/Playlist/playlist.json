@@ -11,6 +11,12 @@
             "name": "Dance The Night Away",
             "artist": "Cream",
             "album": "Disraeli Gears"
+        },
+        {
+            "id": 3,
+            "name": "Early Summer",
+            "artist": "Ryo Fukui",
+            "album": "Scenery"
         }
     ]
 }

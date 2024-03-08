@@ -15,15 +15,18 @@ class App extends Component {
     }
   }
 
-  updatePlaylist = (updatedPlaylist) => {
+  onAddTrack = (track) => {
+    const updatedPlaylist = [...this.state.playlistTracks];
+    updatedPlaylist.push(track);
+
+    //Updating the state
     this.setState({ playlistTracks: updatedPlaylist });
   }
-  //??
 
   render() {
-    console.log('playlistName:', this.props.playlistName);
-    console.log('playlistTracks:', this.props.playlistTracks);
-    console.log('searchResults:', this.props.searchResults);
+    // console.log('playlistName:', this.props.playlistName);
+    // console.log('playlistTracks:', this.props.playlistTracks);
+    // console.log('searchResults:', this.props.searchResults);
     return (
       <div className="App" >
         <header className="App-header">
@@ -31,7 +34,7 @@ class App extends Component {
           <SearchBar />
           <SearchResults
             searchResults={this.state.searchResults}
-            onAddTrack={this.addTrackPlaylist} />
+            onAddTrack={this.onAddTrack} />
           <Playlist
             playlistName={this.props.playlistName}
             playlistTracks={this.props.playlistTracks}
