@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Tracklist from '../TrackList/Tracklist';
 import './Playlist.css';
-const jsonData = require('./playlist.json');
+// const jsonData = require('./playlist.json');
 
 class Playlist extends Component {
     constructor(props) {
         super(props);
         this.state = {
             playlistName: "My Playlist",
-            playlistTracks: jsonData.tracks || []
+            playlistTracks: []
         };
     }
 

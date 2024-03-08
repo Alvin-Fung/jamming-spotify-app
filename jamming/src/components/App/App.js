@@ -9,9 +9,41 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [],
+      searchResults: [
+        {
+          "id": 4,
+          "name": "Plastic Love",
+          "artist": "Mariya Takeuchi",
+          "album": "Expressions"
+        },
+        {
+          "id": 5,
+          "name": "Epitaph",
+          "artist": "King Crimson",
+          "album": "In The Court Of The Crimson King"
+        }
+      ],
       playlistName: "My Playlist",
-      playlistTracks: []
+      playlistTracks: [
+        {
+          "id": 1,
+          "name": "Shine On You Crazy Diamond, Pts. 5-6",
+          "artist": "Pink Floyd",
+          "album": "Wish You Were Here"
+        },
+        {
+          "id": 2,
+          "name": "Dance The Night Away",
+          "artist": "Cream",
+          "album": "Disraeli Gears"
+        },
+        {
+          "id": 3,
+          "name": "Early Summer",
+          "artist": "Ryo Fukui",
+          "album": "Scenery"
+        }
+      ]
     };
     this.onAdd = this.addTrack.bind(this);
   }
