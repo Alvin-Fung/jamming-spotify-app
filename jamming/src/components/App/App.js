@@ -1,54 +1,36 @@
 import React, { useState } from 'react';
-
 import './App.css';
 import SearchBar from '../SearchBar/searchBar';
 import SearchResults from '../SearchResults/searchResults';
 import Playlist from '../Playlist/Playlist';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchResults: [
-        {
-          "id": 4,
-          "name": "Plastic Love",
-          "artist": "Mariya Takeuchi",
-          "album": "Expressions"
-        },
-        {
-          "id": 5,
-          "name": "Epitaph",
-          "artist": "King Crimson",
-          "album": "In The Court Of The Crimson King"
-        }
-      ],
-      playlistName: "My Playlist",
-      playlistTracks: [
-        {
-          "id": 1,
-          "name": "Shine On You Crazy Diamond, Pts. 5-6",
-          "artist": "Pink Floyd",
-          "album": "Wish You Were Here"
-        },
-        {
-          "id": 2,
-          "name": "Dance The Night Away",
-          "artist": "Cream",
-          "album": "Disraeli Gears"
-        },
-        {
-          "id": 3,
-          "name": "Early Summer",
-          "artist": "Ryo Fukui",
-          "album": "Scenery"
-        }
-      ]
-    };
-    this.onAdd = this.addTrack.bind(this);
-  }
+function App() {
+  const [searchResults, setSearchResults] = useState([
+    {
+      id: 4,
+      name: "Plastic Love",
+      artist: "Mariya Takeuchi",
+      album: "Expressions"
+    },
+    {
+      id: 5,
+      name: "Epitaph",
+      artist: "King Crimson",
+      album: "In The Court Of The Crimson King"
+    }
+  ]);
+  const [playlistName, setPlaylistName] = useState("My Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([
+    {
+      id: 1,
+      name: "Shine On You Crazy Diamond, PTs. 5-6",
+      artist: "Pink Floyd",
+      album: "Wish you Were Here"
+    },
+  ]);
 
-  addTrack = (track) => {
+
+  function addTrack(track) {
     let tracks = this.state.playlistTracks;
     if (tracks.find(savedTrack => savedTrack.id === track.id)) {
       return;
@@ -58,22 +40,19 @@ class App extends Component {
     }
   }
 
-  render() {
-
-    return (
-      <div className="App" >
-        <header className="App-header">
-          <h1>Jamming</h1>
-          <SearchBar />
-          <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
-          <Playlist
-            playlistName={this.state.playlistName}
-            playlistTracks={this.state.playlistTracks}
-          />
-        </header>
-      </div>
-    );
-  }
+  return (
+    <div className="App" >
+      <header className="App-header">
+        <h1>Jamming</h1>
+        <SearchBar />
+        <SearchResults searchResults={searchResults} onAdd={addTrack} />
+        <Playlist
+          playlistName={playlistName}
+          playlistTracks={playlistTracks}
+        />
+      </header>
+    </div>
+  );
 }
 
 
