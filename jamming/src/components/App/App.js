@@ -13,15 +13,15 @@ class App extends Component {
       playlistName: "My Playlist",
       playlistTracks: []
     };
-    this.onAddTrack = this.onAddTrack.bind(this);
+    this.onAdd = this.addTrack.bind(this);
   }
 
-  onAddTrack = (track) => {
+  addTrack = (track) => {
     let tracks = this.state.playlistTracks;
     if (tracks.find(savedTrack => savedTrack.id === track.id)) {
       return;
     } else {
-      track.push(track);
+      tracks.push(track);
       this.setState({ playlistTracks: tracks });
     }
   }
@@ -33,7 +33,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Jamming</h1>
           <SearchBar />
-          <SearchResults searchResults={this.state.searchResults} onAdd={this.onAddTrack} />
+          <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
           <Playlist
             playlistName={this.state.playlistName}
             playlistTracks={this.state.playlistTracks}

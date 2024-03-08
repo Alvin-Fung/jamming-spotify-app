@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import Track from '../Track/Track';
 
 class TrackList extends Component {
+
+    onAdd = (track) => {
+        this.props.onAdd(track);
+    }
+
     render() {
-        const { searchResults } = this.props;
-
-        console.log('searchResults: ', searchResults);
-        if (!searchResults || !Array.isArray(searchResults)) {
-            return <div>No results to display.</div>
-        }
-
         return (
             <div className="TrackList">
-                {searchResults.map(track => (
-                    <Track key={track.id} track={track} onAdd={this.props.onAdd} />
-                ))}
+                {
+                    this.props.tracks.map(track => {
+                        return <Track track={track} key={track.id} onAdd={this.onAdd} />
+                    })
+                }
             </div>
         )
     }

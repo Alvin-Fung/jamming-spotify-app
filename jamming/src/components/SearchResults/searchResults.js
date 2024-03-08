@@ -7,8 +7,7 @@ class SearchResults extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchResults: jsonData.searchresults || [],
-            playlist: [],
+            searchResults: jsonData.searchresults,
             message: '',
         };
     }
@@ -19,7 +18,7 @@ class SearchResults extends Component {
             <div className="Search-Results">
                 <h2>Results</h2>
                 {/* Use this.props.onAddTrack instead of this.addTrackToPlaylist */}
-                <TrackList tracks={this.props.searchResults} onAdd={this.onAddTrack} />
+                <TrackList tracks={this.props.searchResults} onAdd={this.onAdd} />
             </div>
         );
     }
