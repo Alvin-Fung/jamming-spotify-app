@@ -12,33 +12,31 @@ class App extends Component {
       searchResults: [],
       playlistName: "My Playlist",
       playlistTracks: []
-    }
+    };
+    this.onAddTrack = this.onAddTrack.bind(this);
   }
 
   onAddTrack = (track) => {
-    const updatedPlaylist = [...this.state.playlistTracks];
-    updatedPlaylist.push(track);
-
-    //Updating the state
-    this.setState({ playlistTracks: updatedPlaylist });
+    let tracks = this.state.playlistTracks;
+    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
+    } else {
+      track.push(track);
+      this.setState({ playlistTracks: tracks });
+    }
   }
 
   render() {
-    // console.log('playlistName:', this.props.playlistName);
-    // console.log('playlistTracks:', this.props.playlistTracks);
-    // console.log('searchResults:', this.props.searchResults);
+
     return (
       <div className="App" >
         <header className="App-header">
           <h1>Jamming</h1>
           <SearchBar />
-          <SearchResults
-            searchResults={this.state.searchResults}
-            onAddTrack={this.onAddTrack} />
+          <SearchResults searchResults={this.state.searchResults} onAdd={this.onAddTrack} />
           <Playlist
-            playlistName={this.props.playlistName}
-            playlistTracks={this.props.playlistTracks}
-          // searchResults={this.props.searchResults}
+            playlistName={this.state.playlistName}
+            playlistTracks={this.state.playlistTracks}
           />
         </header>
       </div>

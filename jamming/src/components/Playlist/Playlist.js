@@ -12,14 +12,6 @@ class Playlist extends Component {
         };
     }
 
-    addTrack = (track) => {
-        if (!this.state.playlistTracks.some(existingTrack => existingTrack.id === track.id)) {
-            this.setState(prevState => ({
-                playlistTracks: [...prevState.playlistTracks, track]
-            }));
-        }
-    }
-
     render() {
         console.log();
         return (
