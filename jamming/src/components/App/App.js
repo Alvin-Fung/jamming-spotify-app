@@ -33,18 +33,17 @@ function App() {
   function addTrack(track) {
     let existingTracks = playlistTracks.find((t) => t.id === track.id);
     let newTrack = playlistTracks.track;
-    let message = '';
     if (existingTracks) {
-      this.state.message("Song is already in the playlist!");
+      console.log("Song is already in the playlist!");
     } else {
       setPlaylistTracks(newTrack);
     }
   }
 
-  function removeTrack(track) {
-    const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
-    setPlaylistTracks(existingTrack);
-  }
+  // function removeTrack(track) {
+  //   const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
+  //   setPlaylistTracks(existingTrack);
+  // }
 
   return (
     <div className="App" >

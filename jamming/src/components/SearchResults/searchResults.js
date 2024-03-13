@@ -8,7 +8,7 @@ function searchResults(props) {
         <div className="Search-Results">
             <h2>Results</h2>
             <TrackList
-                tracks={this.props.searchResults}
+                tracks={props.searchResults}
                 onAdd={props.onAdd}
             />
         </div>

@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function Track(props) {
 
     function renderAction() {
-        if (this.props.isRemoval) {
-            return <button className="Track-action" onClick={removeTrack}>-</button>
+        if (props.isRemoval) {
+            return (
+                <button className="Track-action" onClick={removeTrack}>-</button>
+            );
         } else {
-            return <button className="Track-action" onClick={addTrack}>+</button>
+            return (
+                <button className="Track-action" onClick={passTrack}>+</button>
+            );
         }
     }
 
-    function addTrack() {
+    function passTrack() {
         props.onAdd(props.track);
     }
 
@@ -21,9 +25,9 @@ function Track(props) {
     return (
         <div className="Track">
             <div className="Track-information">
-                <h2>{this.props.track.name}</h2>
+                <h2>{props.track.name}</h2>
                 <p>
-                    {this.props.track.artist} | {this.props.track.album}
+                    {props.track.artist} | {props.track.album}
                 </p>
             </div>
             {renderAction()}
