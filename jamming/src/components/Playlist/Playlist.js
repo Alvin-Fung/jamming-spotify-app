@@ -5,15 +5,17 @@ import './Playlist.css';
 function Playlist(props) {
     // console.log('Playlist ', props.playlistTracks);
     const [playlistName, setPlaylistName] = useState("My Playlist");
-    // const [isEditing, setEditing] = useState(false);
+    const [isEditing, setEditing] = useState(false);
     return (
         <div className="Playlist">
             <div className='playlist-column'>
-                <input
-                    type="text"
-                    value={playlistName}
-                    onChange={(e) => setPlaylistName(e.target.value)}
-                />
+                {isEditing ? (
+                    <input
+                        type="text"
+                        value={playlistName}
+                        onChange={(e) => setPlaylistName(e.target.value)}
+                    />
+                ) }
                 <h2 onClick={() => onChange(true)}>{playlistName}</h2>
                 <Tracklist
                     tracks={props.playlistTracks}
