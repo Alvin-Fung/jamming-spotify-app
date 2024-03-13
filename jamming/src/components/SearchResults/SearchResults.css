@@ -1,9 +1,5 @@
-/* .Search-Results {
-    display: flex;
-    justify-content: space-between;
+.Search-Results {
+    width: 50%;
+    height: 50%;
+    padding: ;
 }
-
-.search-results-column {
-    flex: 1;
-    padding: 20px;
-} */
