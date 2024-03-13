@@ -14,6 +14,7 @@ function Playlist(props) {
                         type="text"
                         value={playlistName}
                         onChange={(e) => setPlaylistName(e.target.value)}
+                        onBlur={() => setEditing(false)}
                     />
                 ) : <h2 onClick={() => setEditing(true)}>{playlistName}</h2>
                 }
