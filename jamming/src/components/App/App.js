@@ -31,7 +31,7 @@ function App() {
 
   //This function doesn't serve it's proper purpose due to strcuture being changed now
   function addTrack(track) {
-    let existingTracks = playlistTracks.find((t) => t.id === track.id);
+    let existingTracks = playlistTracks.some((t) => t.id === track.id);
     let newTrack = playlistTracks.track;
     if (existingTracks) {
       console.log("Song is already in the playlist!");
@@ -44,7 +44,7 @@ function App() {
   //   const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
   //   setPlaylistTracks(existingTrack);
   // }
-
+  console.log('App playlist display', playlistTracks);
   return (
     <div className="App" >
       <header className="App-header">
