@@ -25,7 +25,7 @@ function App() {
       album: "Wish you Were Here"
     }
   ]);
-  const [playlistName, setPlaylistName] = useState("My Playlist");
+  const [playlistName] = useState("My Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([
     {
       id: 3,
@@ -51,8 +51,7 @@ function App() {
     setPlaylistTracks(existingTrack);
   }
 
-
-  console.log('App playlist display', playlistTracks);
+  // console.log('App playlist display', playlistTracks);
   return (
     <div className="App" >
       <header className="App-header">

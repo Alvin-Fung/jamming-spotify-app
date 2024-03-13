@@ -1,7 +1,6 @@
 import React from 'react';
 import TrackList from '../TrackList/Tracklist';
 import './searchResults.css';
-// const jsonData = require('./searchresults.json');
 
 function searchResults(props) {
     return (

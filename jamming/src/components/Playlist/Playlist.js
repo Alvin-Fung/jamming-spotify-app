@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tracklist from '../TrackList/Tracklist';
 import './Playlist.css';
 
 function Playlist(props) {
-    console.log('Playlist ', props.playlistTracks);
+    // console.log('Playlist ', props.playlistTracks);
+    const [playlistName, setPlaylistName] = useState("My Playlist");
+    const [isEditing, setEditing] = useState(false);
     return (
         <div className="Playlist">
             <div className='playlist-column'>
