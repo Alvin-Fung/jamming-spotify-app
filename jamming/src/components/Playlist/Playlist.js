@@ -5,10 +5,12 @@ import './Playlist.css';
 function Playlist(props) {
     // console.log('Playlist ', props.playlistTracks);
     const [playlistName, setPlaylistName] = useState("My Playlist");
-    const [isEditing, setEditing] = useState(false);
+    // const [isEditing, setEditing] = useState(false);
     return (
         <div className="Playlist">
             <div className='playlist-column'>
+                <input
+                />
                 <h2>{props.playlistName}</h2>
                 <Tracklist
                     tracks={props.playlistTracks}
