@@ -15,7 +15,8 @@ function Playlist(props) {
                         value={playlistName}
                         onChange={(e) => setPlaylistName(e.target.value)}
                     />
-                ) : <h2 onClick={() => onChange(true)}>{playlistName}</h2>}
+                ) : <h2 onClick={() => setEditing(true)}>{playlistName}</h2>
+                }
 
                 <Tracklist
                     tracks={props.playlistTracks}
