@@ -57,14 +57,16 @@ function App() {
       <header className="App-header">
         <h1>Jamming</h1>
         <SearchBar />
-        <SearchResults
-          searchResults={searchResults}
-          onAdd={addTrack} />
-        <Playlist
-          playlistName={playlistName}
-          playlistTracks={playlistTracks}
-          onRemove={removeTrack}
-        />
+        <div className="Column-container">
+          <SearchResults
+            searchResults={searchResults}
+            onAdd={addTrack} />
+          <Playlist
+            playlistName={playlistName}
+            playlistTracks={playlistTracks}
+            onRemove={removeTrack}
+          />
+        </div>
       </header>
     </div>
   );

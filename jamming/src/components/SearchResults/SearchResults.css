@@ -1,5 +1,6 @@
 .Search-Results {
     width: 50%;
     height: 50%;
-    padding: ;
+    flex: 1;
+    padding-right: 50px;
 }

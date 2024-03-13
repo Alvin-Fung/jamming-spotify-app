@@ -26,3 +26,8 @@ html {
 .App-link {
   color: #61dafb;
 }
+
+.Column-container {
+  padding-top: 20px;
+  display: flex;
+}
