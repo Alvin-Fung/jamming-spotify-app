@@ -40,10 +40,12 @@ function App() {
     }
   }
 
-  // function removeTrack(track) {
-  //   const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
-  //   setPlaylistTracks(existingTrack);
-  // }
+  function removeTrack(track) {
+    const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
+    setPlaylistTracks(existingTrack);
+  }
+
+
   console.log('App playlist display', playlistTracks);
   return (
     <div className="App" >
@@ -56,6 +58,7 @@ function App() {
         <Playlist
           playlistName={playlistName}
           playlistTracks={playlistTracks}
+          onRemove={removeTrack}
         />
       </header>
     </div>

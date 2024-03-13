@@ -10,6 +10,8 @@ function Playlist(props) {
                 <h2>{props.playlistName}</h2>
                 <Tracklist
                     tracks={props.playlistTracks}
+                    onRemove={props.onRemove}
+                    isRemoval={true}
                 />
                 <button className="Playlist-save">Save to Spotify</button>
             </div>
