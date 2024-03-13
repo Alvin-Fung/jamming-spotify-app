@@ -10,6 +10,9 @@ function Playlist(props) {
         <div className="Playlist">
             <div className='playlist-column'>
                 <input
+                    type="text"
+                    value={playlistName}
+                    onChange={(e) => setPlaylistName(e.target.value)}
                 />
                 <h2>{props.playlistName}</h2>
                 <Tracklist
