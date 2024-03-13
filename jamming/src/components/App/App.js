@@ -29,14 +29,14 @@ function App() {
     },
   ]);
 
-  //This function doesn't serve it's proper purpose due to strcuture being changed now
+  //Reworked function 
   function addTrack(track) {
-    let existingTracks = playlistTracks.some((t) => t.id === track.id);
-    let newTrack = playlistTracks.track;
-    if (existingTracks) {
+    let isTrackInPlaylist = playlistTracks.some((t) => t.id === track.id);
+
+    if (isTrackInPlaylist) {
       console.log("Song is already in the playlist!");
     } else {
-      setPlaylistTracks(newTrack);
+      setPlaylistTracks((prevTracks) => [...prevTracks, track]);
     }
   }
 
@@ -50,7 +50,9 @@ function App() {
       <header className="App-header">
         <h1>Jamming</h1>
         <SearchBar />
-        <SearchResults searchResults={searchResults} onAdd={addTrack} />
+        <SearchResults
+          searchResults={searchResults}
+          onAdd={addTrack} />
         <Playlist
           playlistName={playlistName}
           playlistTracks={playlistTracks}
