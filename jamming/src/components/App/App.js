@@ -51,6 +51,10 @@ function App() {
     setPlaylistTracks(existingTrack);
   }
 
+  function savePlaylist() {
+    const mockURI = this.state.playlistTracks.map(track => track.uri);
+  }
+
   // console.log('App playlist display', playlistTracks);
   return (
     <div className="App" >
@@ -65,6 +69,7 @@ function App() {
             playlistName={playlistName}
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
+            onSave={savePlaylist}
           />
         </div>
       </header>

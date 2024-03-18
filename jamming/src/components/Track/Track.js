@@ -14,10 +14,6 @@ function Track(props) {
         }
     }
 
-    function savePlaylist() {
-        const mockURI = this.state.playlistTracks.map(track => track.uri);
-    }
-
     function passTrack() {
         props.onAdd(props.track);
     }
