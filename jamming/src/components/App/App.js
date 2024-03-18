@@ -25,7 +25,7 @@ function App() {
       album: "Wish you Were Here"
     }
   ]);
-  const [playlistName] = useState("My Playlist");
+  const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([
     {
       id: 3,
@@ -52,9 +52,11 @@ function App() {
   }
 
   function savePlaylist() {
-    const mockURI = this.state.playlistTracks.map(track => track.uri);
-    console.log('Mock URI Array', mockURI);
-    this.setState({ playlistTracks: [] });
+    const mockURI = playlistTracks.map(track => track.uri);
+    const mockURIName = playlistTracks.map(track => track.name);
+    console.log('Playlist Name:', playlistName);
+    console.log('Tracks:', mockURIName);
+    setPlaylistTracks([]);
   }
 
   // console.log('App playlist display', playlistTracks);
@@ -72,6 +74,7 @@ function App() {
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
             onSave={savePlaylist}
+            onPlaylistNameChange={setPlaylistName}
           />
         </div>
       </header>
