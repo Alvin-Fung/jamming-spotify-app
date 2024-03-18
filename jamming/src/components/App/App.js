@@ -53,6 +53,8 @@ function App() {
 
   function savePlaylist() {
     const mockURI = this.state.playlistTracks.map(track => track.uri);
+    console.log('Mock URI Array', mockURI);
+    this.setState({ playlistTracks: [] });
   }
 
   // console.log('App playlist display', playlistTracks);
