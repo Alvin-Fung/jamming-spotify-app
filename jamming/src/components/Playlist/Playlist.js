@@ -16,9 +16,8 @@ function Playlist(props) {
                         onChange={(e) => setPlaylistName(e.target.value)}
                         onBlur={() => setEditing(false)}
                     />
-                ) : <h2 onClick={() => setEditing(true)}>{playlistName}</h2>
-                }
-
+                ) : (<h2 onClick={() => setEditing(true)}>{playlistName}</h2>
+                )}
                 <Tracklist
                     tracks={props.playlistTracks}
                     onRemove={props.onRemove}
