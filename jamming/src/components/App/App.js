@@ -51,6 +51,10 @@ function App() {
     setPlaylistTracks(existingTrack);
   }
 
+  function updatePlaylistName() {
+
+  }
+
   function savePlaylist() {
     const mockURI = playlistTracks.map(track => track.uri);
     const mockURIName = playlistTracks.map(track => track.name);
