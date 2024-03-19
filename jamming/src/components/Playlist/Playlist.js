@@ -4,7 +4,7 @@ import './Playlist.css';
 
 function Playlist(props) {
     // console.log('Playlist ', props.playlistTracks);
-    const [playlistName, setPlaylistName] = useState("My Playlist");
+    const playlistName = props.playlistName;
     const [isEditing, setEditing] = useState(false);
     return (
         <div className="Playlist">
@@ -13,7 +13,7 @@ function Playlist(props) {
                     <input
                         type="text"
                         value={playlistName}
-                        onChange={(e) => setPlaylistName(e.target.value)}
+                        onChange={(e) => props.onPlaylistNameChange(e.target.value)}
                         onBlur={() => setEditing(false)}
                     />
                 ) : (<h2 onClick={() => setEditing(true)}>{playlistName}</h2>
