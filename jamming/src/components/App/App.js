@@ -8,18 +8,21 @@ function App() {
   const [searchResults, setSearchResults] = useState([
     {
       id: 1,
+      uri: "",
       name: "Plastic Love",
       artist: "Mariya Takeuchi",
       album: "Expressions"
     },
     {
       id: 2,
+      uri: "",
       name: "Epitaph",
       artist: "King Crimson",
       album: "In The Court Of The Crimson King"
     },
     {
       id: 3,
+      uri: "",
       name: "Shine On You Crazy Diamond, PTs. 5-6",
       artist: "Pink Floyd",
       album: "Wish you Were Here"
@@ -29,6 +32,7 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState([
     {
       id: 3,
+      uri: "",
       name: "Shine On You Crazy Diamond, PTs. 5-6",
       artist: "Pink Floyd",
       album: "Wish you Were Here"
@@ -78,7 +82,7 @@ function App() {
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
             onSave={savePlaylist}
-            onNameChange={setPlaylistName}
+            onNameChange={updatePlaylistName}
           />
         </div>
       </header>
