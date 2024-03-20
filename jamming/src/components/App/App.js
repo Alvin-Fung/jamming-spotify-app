@@ -51,14 +51,16 @@ function App() {
     setPlaylistTracks(existingTrack);
   }
 
-  function updatePlaylistName(name) {
-    setPlaylistName({ playlistName: name });
-  }
 
   function savePlaylist() {
     const mockURI = playlistTracks.map(track => track.uri);
     console.log('Tracks:', mockURI);
     setPlaylistTracks([]);
+  }
+
+  function updatePlaylistName(name) {
+    setPlaylistName(name);
+    console.log('Playlist name: ', name);
   }
 
   // console.log('App playlist display', playlistTracks);
@@ -76,7 +78,7 @@ function App() {
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
             onSave={savePlaylist}
-            onPlaylistNameChange={updatePlaylistName}
+            onNameChange={setPlaylistName}
           />
         </div>
       </header>

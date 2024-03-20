@@ -13,7 +13,7 @@ function Playlist(props) {
                     <input
                         type="text"
                         value={playlistName}
-                        onChange={(e) => props.onPlaylistNameChange(e.target.value)}
+                        onChange={(e) => props.onNameChange(e.target.value)}
                         onBlur={() => setEditing(false)}
                     />
                 ) : (<h2 onClick={() => setEditing(true)}>{playlistName}</h2>
