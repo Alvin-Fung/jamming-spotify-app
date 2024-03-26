@@ -8,21 +8,21 @@ function App() {
   const [searchResults, setSearchResults] = useState([
     {
       id: 1,
-      uri: "",
+      uri: "spotify:track:7rU6Iebxzlvqy5t857bKFq?si=ee48499d590d489b",
       name: "Plastic Love",
       artist: "Mariya Takeuchi",
       album: "Expressions"
     },
     {
       id: 2,
-      uri: "",
+      uri: "spotify:track:4rEle6gif1VERA41tjOTIq?si=9def392c06464488",
       name: "Epitaph",
       artist: "King Crimson",
       album: "In The Court Of The Crimson King"
     },
     {
       id: 3,
-      uri: "",
+      uri: "spotify:track:6pnwfWyaWjQiHCKTiZLItr?si=afed9f6a580c4571",
       name: "Shine On You Crazy Diamond, PTs. 5-6",
       artist: "Pink Floyd",
       album: "Wish you Were Here"
@@ -32,7 +32,7 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState([
     {
       id: 3,
-      uri: "",
+      uri: "spotify:track:6pnwfWyaWjQiHCKTiZLItr?si=afed9f6a580c4571",
       name: "Shine On You Crazy Diamond, PTs. 5-6",
       artist: "Pink Floyd",
       album: "Wish you Were Here"
@@ -58,13 +58,13 @@ function App() {
 
   function savePlaylist() {
     const mockURI = playlistTracks.map(track => track.uri);
+    console.log('Playlist name: ', playlistName);
     console.log('Tracks:', mockURI);
     setPlaylistTracks([]);
   }
 
   function updatePlaylistName(name) {
     setPlaylistName(name);
-    console.log('Playlist name: ', name);
   }
 
   // console.log('App playlist display', playlistTracks);
