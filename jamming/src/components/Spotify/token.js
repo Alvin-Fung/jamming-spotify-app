@@ -14,12 +14,15 @@ const Spotify = {
             // Otherwise, it will attempt to retrieve it from the URL
             const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
             const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-            // Need some logic here that extracts the access token from the URL
-            // Probably also need to have a way of storing it and returning
-            // As well as handling for it if there is no token found
+            if (accessTokenMatch && expiresInMatch) {
+                // Need some logic here that extracts the access token from the URL
+                // Probably also need to have a way of storing it and returning
+                // As well as handling for it if there is no token found
 
+            } else {
+                console.error('Access token was not found in URL');
+            }
         }
-
     },
 };
 
