@@ -9,8 +9,8 @@ const Spotify = {
     // Method for access token retrieval
     getAccessToken() {
         // Checks if it's set
-        if (accessToken) {
-            return accessToken;
+        if (this.accessToken) {
+            return this.accessToken;
         }
         // Otherwise, it will attempt to retrieve it from the URL
         const accessTokenMatch = url.match(/access_token=([^&]*)/);
@@ -18,13 +18,14 @@ const Spotify = {
 
         // If they are both found in the URL, then it gets stored
         if (accessTokenMatch && expiresInMatch) {
-            accessToken = accessTokenMatch[1];
+            this.accessToken = accessTokenMatch[1];
             const expiresIn = Number(expiresInMatch[1]);
 
             // Callback function 
             window.setTimeout(() => this.accessToken = '', expiresIn + 1000);
             window.history.pushState('Access Token', null, '/');
 
+            return this.accessToken;
         } else {
             console.error('Access token was not found in URL');
         }
