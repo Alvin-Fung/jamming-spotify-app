@@ -12,13 +12,15 @@ const Spotify = {
             return accessToken;
         } else {
             // Otherwise, it will attempt to retrieve it from the URL
+            window.location.href.match(/access_token=([^&]*)/);
+            window.location.href.match(/expires_in=([^&]*)/);
             // Need some logic here that extracts the access token from the URL
             // Probably also need to have a way of storing it and returning
             // As well as handling for it if there is no token found
+
         }
-        window.location.href.match(/access_token=([^&]*)/);
-        window.location.href.match(/expires_in=([^&]*)/);
+
     },
 };
 
-export { Spotify };
+export default Spotify;
