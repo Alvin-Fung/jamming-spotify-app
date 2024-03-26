@@ -21,7 +21,9 @@ const Spotify = {
             accessToken = accessTokenMatch[1];
             const expiresIn = Number(expiresInMatch[1]);
 
-            window
+            // Callback function 
+            window.setTimeout(() => this.accessToken = '', expiresIn + 1000);
+            window.history.pushState('Access Token', null, '/');
 
         } else {
             console.error('Access token was not found in URL');
