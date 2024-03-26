@@ -1,5 +1,5 @@
-var client_id = 'CLIENT_ID';
-var redirect_uri = 'http://localhost:3000/callback';
+var client_id = 'be14b06a1d904f64a78c523bedd02a33';
+var redirect_uri = 'http://localhost:3000/';
 
 const Spotify = {
     // Place holder for access token
@@ -16,7 +16,9 @@ const Spotify = {
             // Probably also need to have a way of storing it and returning
             // As well as handling for it if there is no token found
         }
-    }
-}
+        window.location.href.match(/access_token=([^&]*)/);
+        window.location.href.match(/expires_in=([^&]*)/);
+    },
+};
 
 export { Spotify };
