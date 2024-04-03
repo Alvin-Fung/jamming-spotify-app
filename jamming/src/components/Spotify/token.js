@@ -29,11 +29,16 @@ const Spotify = {
             return this.accessToken;
 
         } else {
-            //Redirect URL
+            // Redirect URL
             const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&
             scope=playlist-modify-public&redirect_uri=${redirect_uri}`;
             window.location = redirect;
             console.error('Access token was not found in URL');
+        }
+
+        searchTracks(term){
+            // Web app reference for searching items
+            return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`)
         }
     },
 };
