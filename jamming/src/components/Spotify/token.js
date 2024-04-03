@@ -35,14 +35,30 @@ const Spotify = {
             window.location = redirect;
             console.error('Access token was not found in URL');
         }
-
-        searchTracks(term){
-            // Web app endpoint reference for searching items
-            return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
-                headers: { Authorization: `Bearer ${this.accessToken}` },
-            });
-        }
     },
+
+    searchTracks(term) {
+        const accessToken = Spotify.accessToken();
+        console.log(accessToken);
+        // Web app endpoint reference for searching tracks
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`), {
+            headers: { Authorization: `Bearer ${this.accessToken}` },
+        }
+            .then((response) => {
+                return response.json();
+            })
+            .then((jsonResponse) => {
+                if (!jsonResponse.tracks) {
+                    return [];
+                }
+                return jsonResponse.tracks.items.map(tracks => ({
+                    id: tracks.id,
+                    name: tracks.name,
+                    artist: tracks.artist[0].name,
+                    album: tracks.album
+                }));
+            });
+    }
 };
 
 export default Spotify;
