@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from '../SearchBar/searchBar';
 import SearchResults from '../SearchResults/searchResults';
 import Playlist from '../Playlist/Playlist';
+import Spotify from '../Spotify/token';
 
 function App() {
   const [searchResults, setSearchResults] = useState([
@@ -55,7 +56,6 @@ function App() {
     setPlaylistTracks(existingTrack);
   }
 
-
   function savePlaylist() {
     const mockURI = playlistTracks.map(track => track.uri);
     console.log('Playlist name: ', playlistName);
@@ -65,6 +65,11 @@ function App() {
 
   function updatePlaylistName(name) {
     setPlaylistName(name);
+  }
+
+  function search(term) {
+    Spotify
+    console.log(term);
   }
 
   // console.log('App playlist display', playlistTracks);
