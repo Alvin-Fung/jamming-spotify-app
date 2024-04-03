@@ -12,6 +12,7 @@ const Spotify = {
         if (this.accessToken) {
             return this.accessToken;
         }
+
         // Otherwise, it will attempt to retrieve it from the URL
         const accessTokenMatch = url.match(/access_token=([^&]*)/);
         const expiresInMatch = url.match(/expires_in=([^&]*)/);
@@ -26,7 +27,12 @@ const Spotify = {
             window.history.pushState('Access Token', null, '/');
 
             return this.accessToken;
+
         } else {
+            //Redirect URL
+            const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&
+            scope=playlist-modify-public&redirect_uri=${redirect_uri}`;
+            window.location = redirect;
             console.error('Access token was not found in URL');
         }
     },
