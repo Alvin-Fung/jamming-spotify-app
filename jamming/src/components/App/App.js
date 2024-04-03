@@ -3,7 +3,7 @@ import './App.css';
 import SearchBar from '../SearchBar/searchBar';
 import SearchResults from '../SearchResults/searchResults';
 import Playlist from '../Playlist/Playlist';
-import Spotify from '../Spotify/token';
+import Spotify from '../Spotify/Spotify';
 
 function App() {
   const [searchResults, setSearchResults] = useState([
@@ -67,7 +67,7 @@ function App() {
     setPlaylistName(name);
   }
 
-  function search(term) {
+  function searchTracks(term) {
     Spotify.search(term).then((result) => {
       this.setState({ searchResults: result });
     })
