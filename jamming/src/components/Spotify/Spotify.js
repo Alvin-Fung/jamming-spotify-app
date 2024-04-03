@@ -1,10 +1,10 @@
 var client_id = 'be14b06a1d904f64a78c523bedd02a33';
-var redirect_uri = 'http://localhost:3000/';
+var redirect_url = 'http://localhost:3000/';
 var url = window.location.href;
 
 const Spotify = {
     // Place holder for access token
-    accessToken: '',
+    accessToken: "",
 
     // Method for access token retrieval
     getAccessToken() {
@@ -30,8 +30,8 @@ const Spotify = {
 
         } else {
             // Redirect URL
-            const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&
-            scope=playlist-modify-public&redirect_uri=${redirect_uri}`;
+            const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}
+            &response_type=token&scope=playlist-modify-public&redirect_uri=${redirect_url}`;
             window.location = redirect;
             console.error('Access token was not found in URL');
         }
@@ -41,9 +41,11 @@ const Spotify = {
         const accessToken = Spotify.accessToken();
         console.log(accessToken);
         // Web app endpoint reference for searching tracks
-        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`), {
-            headers: { Authorization: `Bearer ${this.accessToken}` },
-        }
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            },
+        })
             .then((response) => {
                 return response.json();
             })
@@ -51,11 +53,11 @@ const Spotify = {
                 if (!jsonResponse.tracks) {
                     return [];
                 }
-                return jsonResponse.tracks.items.map(tracks => ({
-                    id: tracks.id,
-                    name: tracks.name,
-                    artist: tracks.artist[0].name,
-                    album: tracks.album
+                return jsonResponse.tracks.items.map(track => ({
+                    id: track.id,
+                    name: track.name,
+                    artist: track.artists[0].name,
+                    album: track.album.name
                 }));
             });
     }
