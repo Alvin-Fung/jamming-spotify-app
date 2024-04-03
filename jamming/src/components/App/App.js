@@ -68,9 +68,7 @@ function App() {
   }
 
   function searchTracks(term) {
-    Spotify.search(term).then((result) => {
-      this.setState({ searchResults: result });
-    })
+    Spotify.search(term).then((result) => (setSearchResults(result)));
     console.log(term);
   }
 
@@ -79,7 +77,7 @@ function App() {
     <div className="App" >
       <header className="App-header">
         <h1>Jamming</h1>
-        <SearchBar />
+        <SearchBar onSearch={searchTracks} />
         <div className="Column-container">
           <SearchResults
             searchResults={searchResults}
