@@ -68,7 +68,9 @@ function App() {
   }
 
   function search(term) {
-    Spotify
+    Spotify.search(term).then((result) => {
+      this.setState({ searchResults: result });
+    })
     console.log(term);
   }
 
