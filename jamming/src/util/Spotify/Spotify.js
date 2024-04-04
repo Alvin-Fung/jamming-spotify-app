@@ -1,5 +1,5 @@
-var client_id = 'be14b06a1d904f64a78c523bedd02a33';
-var redirect_url = 'http://localhost:3000';
+var clientID = 'be14b06a1d904f64a78c523bedd02a33';
+var redirectURI = 'http://localhost:3000/';
 var url = window.location.href;
 let accessToken = '';
 
@@ -28,8 +28,8 @@ const Spotify = {
 
         } else {
             // Redirect URL
-            const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}
-            &response_type=token&scope=playlist-modify-public&redirect_uri=${redirect_url}`;
+            const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}
+            &response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
             window.location = redirect;
             console.error('Access token was not found in URL');
         }
@@ -55,10 +55,11 @@ const Spotify = {
                     id: track.id,
                     name: track.name,
                     artist: track.artists[0].name,
-                    album: track.album.name
+                    album: track.album.name,
+                    uri: track.uri
                 }));
             });
     }
 };
 
-export default Spotify;
+export { Spotify };
