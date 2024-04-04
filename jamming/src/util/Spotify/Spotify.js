@@ -40,6 +40,7 @@ const Spotify = {
         // Web app endpoint reference for searching tracks
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             headers: {
+                //Authoriziation parameter for the user's access token in the implicit grant flow request format
                 Authorization: `Bearer ${accessToken}`
             },
         })
@@ -56,7 +57,11 @@ const Spotify = {
                     uri: track.uri
                 }));
             });
-    }
+    },
+
+    savePlaylist(name, trackURIs) {
+
+    },
 };
 
 export { Spotify };
