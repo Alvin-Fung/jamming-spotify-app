@@ -82,7 +82,14 @@ const Spotify = {
                     //Converting response into a JSON
                     .then((response) => response.json())
                     .then(jsonResponse => {
-                        const playlistID = jsonResponse.id
+                        const playlistID = jsonResponse.id;
+                        return fetch(
+                            `https://api.spotify.com/v1/playlists/${playlistID}/tracks`, {
+                            headers: headers,
+                            method: postMessage,
+                            body: JSON.stringify({ uris: trackURIs }),
+                        }
+                        );
                     })
             });
     },

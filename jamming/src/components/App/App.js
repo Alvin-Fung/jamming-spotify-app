@@ -57,10 +57,11 @@ function App() {
   }
 
   function savePlaylist() {
-    const mockURI = playlistTracks.map(track => track.uri);
-    console.log('Playlist name: ', playlistName);
-    console.log('Tracks:', mockURI);
-    setPlaylistTracks([]);
+    const trackURIs = playlistTracks.map(track => track.uri);
+    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+      playlistName("New Playlist"),
+        setPlaylistTracks([]);
+    });
   }
 
   function updatePlaylistName(name) {
