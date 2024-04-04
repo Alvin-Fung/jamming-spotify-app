@@ -59,8 +59,11 @@ const Spotify = {
             });
     },
 
-    savePlaylist(name, trackURIs) {
-
+    savePlaylist(playlistName, trackURIs) {
+        if (!playlistName || trackURIs) return Promise.reject("Access token not found!");
+        const accessToken = Spotify.getAccessToken();
+        const headers = { Authorization: `Bearer ${accessToken}` };
+        let userID;
     },
 };
 
