@@ -12,8 +12,8 @@ const Spotify = {
         }
 
         // Otherwise, it will attempt to retrieve it from the URL
-        const accessTokenMatch = url.match(/access_token=([^&]*)/);
-        const expiresInMatch = url.match(/expires_in=([^&]*)/);
+        const accessTokenMatch = window.Location.href.match(/access_token=([^&]*)/);
+        const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
         // If they are both found in the URL, then it gets stored
         if (accessTokenMatch && expiresInMatch) {

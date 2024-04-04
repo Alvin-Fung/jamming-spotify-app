@@ -1,20 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
-    constructor(props) {
-        super(props);
-        //State and method here
-    }
+function SearchBar() {
 
-    render() {
-        return (
-            <div className="Search-Bar">
-                <input placeholder="Enter A Song, Album or Artist" />
-                <button className="searchButton">Search</button>
-            </div>
-        )
+    return (
+        <div className="Search-Bar">
+            <input placeholder="Enter A Song, Album or Artist" />
+            <button className="searchButton">Search</button>
+        </div>
+    )
 
-    }
 }
 
 export default SearchBar;
