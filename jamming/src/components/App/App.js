@@ -68,7 +68,7 @@ function App() {
   }
 
   function searchTracks(term) {
-    Spotify.search(term).then((result) => (setSearchResults(result)));
+    Spotify.searchTerms(term).then((result) => (setSearchResults(result)));
     console.log(term);
   }
 

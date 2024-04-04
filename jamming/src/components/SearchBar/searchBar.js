@@ -15,8 +15,10 @@ const SearchBar = ({ onSearch }) => {
     return (
         <div className="Search-Bar">
             <input
-                placeholder="Enter A Song, Album or Artist" />
-            <button className="searchButton">Search</button>
+                placeholder="Enter A Song, Album or Artist"
+                onChange={handleInputChange}
+            />
+            <button className="searchButton" onClick={handleSubmit}>Search</button>
         </div>
     )
 
