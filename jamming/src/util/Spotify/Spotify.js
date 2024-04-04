@@ -60,10 +60,16 @@ const Spotify = {
     },
 
     savePlaylist(playlistName, trackURIs) {
+        // Default variables
         if (!playlistName || trackURIs) return Promise.reject("Access token not found!");
         const accessToken = Spotify.getAccessToken();
         const headers = { Authorization: `Bearer ${accessToken}` };
         let userID;
+
+        // Fetches the current user's  ID
+        return fetch(`https://api.spotify.com/v1/me`, {
+            headers: headers,
+        })
     },
 };
 
