@@ -1,17 +1,15 @@
-var clientID = 'be14b06a1d904f64a78c523bedd02a33';
-var redirectURI = 'http://localhost:3000';
-var url = window.location.href;
-let accessToken = '';
+var clientID = "be14b06a1d904f64a78c523bedd02a33";
+var redirectURI = "http://localhost:3000";
+let accessToken = "";
 
 const Spotify = {
     // Method for access token retrieval
     getAccessToken() {
         // Checks if it's set
-        if (accessToken) {
-            return accessToken;
-        }
+        if (accessToken) return accessToken;
 
         // Otherwise, it will attempt to retrieve it from the URL
+        var url = window.location.href;
         const accessTokenMatch = url.match(/access_token=([^&]*)/);
         const expiresInMatch = url.match(/expires_in=([^&]*)/);
 
@@ -20,10 +18,9 @@ const Spotify = {
             accessToken = accessTokenMatch[1];
             const expiresIn = Number(expiresInMatch[1]);
 
-            // Callback function 
-            window.setTimeout(() => this.accessToken = '', expiresIn + 1000);
-            window.history.pushState('Access Token', null, '/');
-
+            // This actuall sets the access token to expire at the value for expiration time
+            window.setTimeout(() => this.accessToken = "", expiresIn + 1000);
+            window.history.pushState("Access Token", null, "/");
             return accessToken;
 
         } else {
@@ -41,14 +38,12 @@ const Spotify = {
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             method: "GET",
             //Authoriziation parameter for the user's access token in the implicit grant flow request format
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            },
+            headers: { Authorization: `Bearer ${accessToken}` },
         })
             .then((response) => response.json())
             .then((jsonResponse) => {
-                if (!jsonResponse.tracks) {
-                    return [];
+                if (!jsonResponse) {
+                    console.log("Response error.");
                 }
                 return jsonResponse.tracks.items.map(track => ({
                     id: track.id,
@@ -68,13 +63,10 @@ const Spotify = {
         let userID;
 
         // Fetches the current user's  ID
-        return fetch(`https://api.spotify.com/v1/me`, {
-            headers: headers,
-        })
-            .then((response) => response.json()
-            )
+        return fetch(`https://api.spotify.com/v1/me`, { headers: headers, })
+            .then((response) => response.json())
             .then((jsonResponse) => {
-                const userID = jsonResponse.id;
+                userID = jsonResponse.id;
                 return fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
                     headers: headers,
                     method: "POST",
