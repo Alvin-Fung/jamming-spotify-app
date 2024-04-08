@@ -57,7 +57,7 @@ const Spotify = {
 
     savePlaylist(playlistName, trackURIs) {
         // Default variables
-        if (!playlistName || trackURIs) return Promise.reject("Access token not found!");
+        if (!playlistName || !trackURIs) return Promise.reject("Access token not found!");
         const accessToken = Spotify.getAccessToken();
         const headers = { Authorization: `Bearer ${accessToken}` };
         let userID;
