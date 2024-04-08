@@ -39,8 +39,9 @@ const Spotify = {
         console.log(accessToken);
         // Web app endpoint reference for searching tracks
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+            method: "GET",
+            //Authoriziation parameter for the user's access token in the implicit grant flow request format
             headers: {
-                //Authoriziation parameter for the user's access token in the implicit grant flow request format
                 Authorization: `Bearer ${accessToken}`
             },
         })
@@ -76,7 +77,7 @@ const Spotify = {
                 const userID = jsonResponse.id;
                 return fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
                     headers: headers,
-                    method: postMessage,
+                    method: "POST",
                     body: JSON.stringify({ name: playlistName }),
                 })
                     //Converting response into a JSON
@@ -86,7 +87,7 @@ const Spotify = {
                         return fetch(
                             `https://api.spotify.com/v1/playlists/${playlistID}/tracks`, {
                             headers: headers,
-                            method: postMessage,
+                            method: "POST",
                             body: JSON.stringify({ uris: trackURIs }),
                         }
                         );
