@@ -10,7 +10,7 @@
   color: #fff;
 }
 
-.App-playlist {
+.Column-container {
   display: flex;
   justify-content: space-between;
   width: 100%;

@@ -8,7 +8,7 @@ function Playlist(props) {
     const [isEditing, setEditing] = useState(false);
     return (
         <div className="Playlist">
-            <div className='Playlist-Column'>
+            <div className='Playlist-column'>
                 {isEditing ? (
                     <input
                         type="text"
